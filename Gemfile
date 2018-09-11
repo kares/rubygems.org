@@ -20,10 +20,11 @@ gem 'kaminari'
 gem 'mail', '2.6.6'
 gem 'newrelic_rpm'
 gem 'paul_revere', '~> 3.0.0'
-gem 'pg'
+gem 'pg', platform: :mri
+gem 'activerecord-jdbcpostgresql-adapter', platform: :jruby
 gem 'rack'
 gem 'rack-utf8_sanitizer'
-gem 'rbtrace', '~> 0.4.8'
+gem 'rbtrace', '~> 0.4.8', platform: :mri
 gem 'rdoc'
 gem 'rest-client', require: 'rest_client'
 gem 'roadie-rails', '~> 1.3.0'
@@ -31,7 +32,7 @@ gem 'sass', require: false
 gem 'shoryuken', '~> 2.1.0', require: false
 gem 'statsd-instrument', '~> 2.3.0'
 gem 'uglifier', '>= 1.0.3'
-gem 'unicorn', '~> 5.5.0.1.g6836'
+gem 'unicorn', '~> 5.5.0.1.g6836', platform: :mri, require: false
 gem 'validates_formatting_of'
 gem 'elasticsearch-model', '~> 5.0.0'
 gem 'elasticsearch-rails', '~> 5.0.0'
@@ -51,7 +52,7 @@ gem 'logstash-event'
 group :development, :test do
   gem 'rubocop', require: false
   gem 'toxiproxy', '~> 1.0.0'
-  gem 'pry-byebug'
+  gem 'pry-byebug', platform: :mri
 end
 
 group :development do
@@ -71,5 +72,5 @@ group :test do
 end
 
 group :development, :deploy do
-  gem 'kubernetes-deploy', '>= 0.20.6', require: false
+  gem 'kubernetes-deploy', '>= 0.20.6', platform: :mri, require: false
 end
